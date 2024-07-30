@@ -31,3 +31,17 @@ body, html{
     font-size: 20px;
     border-radius: 10px;
 }
+
+.action-buttons a{
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.todo-item:hover .action-buttons a{
+    opacity: 1;
+}
+
+.fb{
+    font-weight: bold;
+}
