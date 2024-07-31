@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
         <div class="d-flex justify-content-center align-items-center mt-4">
             <a href="{% url "add_todo" %}" class = "btn btn-outline-dark btn-xl">Add a To do</a>
         </div>  
@@ -16,8 +17,8 @@
                 
                 <li class="list-group-item mt-1 d-flex justify-content-between align-items-center lead p-4 todo-item">{{todo.task}} 
                     <div class="d-flex align-items-center action-buttons">
-                        <a href = "#" class="mx-2 btn btn-outline-dark btn-hover  ">Edit</a>
-                        <a   href = "#" class="mx-2 btn btn-outline-danger">Delete</a>
+                        <a href = "{% url "edit_todo" todo.id %}" class="mx-2 btn btn-outline-dark btn-hover  ">Edit</a>
+                        <a   href = "{% url "delete_todo" todo.id %}" class="mx-2 btn btn-outline-danger">Delete</a>
                         <span class="mx-2">
                             {{todo.added_date}}
                         </span>
@@ -27,6 +28,15 @@
             {% endfor %}
             </ul>
         </div>
+
+    
+    {% else %}
+
+        <h2 class="mt-4 text-center">Register to start managing your tasks</h2>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <a href = "{% url "register"  %}" class=" btn btn-outline-dark">Register/Login</a>
+        </div>
+    {% endif %}
 
 
 {% endblock %}

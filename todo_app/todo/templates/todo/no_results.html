@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+No results Found!
+{% endblock %}
+
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <h2 class = "display-2">Sorry we couldn't find any results matching "{{search_query}}" </h2>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <a href="{% url "home" %}" class = "btn btn-outline-secondary btn-xl">Back</a>
+    </div> 
+{% endblock %}

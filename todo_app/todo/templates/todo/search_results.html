@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <a href="{% url "add_todo" %}" class = "btn btn-outline-dark btn-xl">Add a To do</a>
+        </div>  
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <h2 class = "display-2">Search results for: {{search_query}}</h2>
+        </div>
+
+        <div class="container">
+            
+            <ul class="list-group mt-4">
+            {% for todo in todos %}
+                
+                <li class="list-group-item mt-1 d-flex justify-content-between align-items-center lead p-4 todo-item">{{todo.task}} 
+                    <div class="d-flex align-items-center action-buttons">
+                        <a href = "{% url "edit_todo" todo.id %}" class="mx-2 btn btn-outline-dark btn-hover  ">Edit</a>
+                        <a   href = "{% url "delete_todo" todo.id %}" class="mx-2 btn btn-outline-danger">Delete</a>
+                        <span class="mx-2">
+                            {{todo.added_date}}
+                        </span>
+                    </div>
+                </li>
+             
+            {% endfor %}
+            </ul>
+
+            <div class="d-flex justify-content-center align-items-center mt-4">
+                <a href="{% url "home" %}" class = "btn btn-outline-secondary btn-xl">Back</a>
+            </div>  
+        </div>
+
+
+{% endblock %}

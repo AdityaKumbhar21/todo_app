@@ -2,7 +2,7 @@
 
 
 {% block title %}
-Add a Todo
+Edit a Todo
 {% endblock %}
 
 
@@ -10,17 +10,17 @@ Add a Todo
 <div class="container mt-4">
 <form class="card mx-auto col-6 card p-4 lead" method = "post">
     {% csrf_token %}
-    <h2 class="display-5 fb text-center mb-4">Add a Todo</h2>
+    <h2 class="display-5 fb text-center mb-4">Edit a Todo</h2>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Enter Todo</label>
-      <input type="text" class="form-control" name="task">
+      <input type="text" class="form-control" value = "{{todo.task}}" name="task">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Todo Description(if any):</label>
-      <textarea name="task_description" class = "form-control"></textarea>
+      <textarea name="task_description" class = "form-control">{{todo.task_description}}</textarea>
     </div>
     <div class = "container row-2 mt-3">
-        <button type="submit" class="btn btn-outline-dark btn-md">Save</button>
+        <button type="submit" class="btn btn-outline-dark btn-md">Save Changes</button>
         <a href="{% url "home" %}" class="btn btn-outline-secondary btn-md">Back</a>
     </div>
   </form>
