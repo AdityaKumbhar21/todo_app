@@ -124,5 +124,5 @@ def login_page(request):
 
 def logout_page(request):
     logout(request)
-    return render(request,'todo/logout.html')
+    return render(request,'registeration/logout.html')
 
