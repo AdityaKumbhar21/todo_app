@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 urlpatterns = [
@@ -23,3 +24,5 @@ urlpatterns = [
     path('',views.home, name = 'base_home'),
     path('todo/', include('todo.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
