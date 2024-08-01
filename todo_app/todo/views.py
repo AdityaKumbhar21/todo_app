@@ -11,7 +11,10 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    todos = Todo.objects.all()
+    if request.user.is_authenticated:
+        todos = Todo.objects.filter(user=request.user)  
+    else:
+        todos = []
     return render(request, 'todo/home.html',{'todos':todos})
 
 
@@ -92,7 +95,7 @@ def register_page(request):
         user.set_password(password)
         user.save()
         messages.success(request, "User registered successfully.")
-        return redirect('home')
+        return redirect('login')
 
 
     return render(request, 'registeration/register.html')
