@@ -35,7 +35,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/todo-app.git
+git clone https://github.com/AdityaKumbhar21/todo-app.git
 cd todo-app
 ```
 
@@ -83,13 +83,14 @@ Visit `http://127.0.0.1:8000` in your browser to see the application running.
 
 To deploy this application, follow the documentation for your preferred deployment platform. Common options include Heroku, Render, and DigitalOcean.
 
+### Live Demo
+Check out the live demo of the project: [Todo App](https://todo-app-e5vs.onrender.com/)
+
 ### Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-### License
 
-This project is licensed under the MIT License.
 
 ### Acknowledgments
 
